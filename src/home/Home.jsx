@@ -4,6 +4,7 @@ import HomeCategory from "./HomeCategory";
 import CategoryshowCase from "./CategoryshowCase";
 import Register from "./Register";
 import Location from "./Location";
+import AboutUs from "./AboutUs";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <CategoryshowCase />
       <Register />
       <Location />
+      <AboutUs />
     </>
   );
 };
