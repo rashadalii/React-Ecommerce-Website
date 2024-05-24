@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const title = "About ShopCart";
 const desc =
@@ -152,6 +153,27 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* footer bottom */}
+      <div className="footer-bottom">
+        <div className="container">
+          <div className="section-wrapper">
+            <p>
+              &copy; 2024 <Link to="/">Shop Cart</Link>Designed by{" "}
+              <a href="/" target="_blank">
+                Rashad Aliyev
+              </a>
+            </p>
+            <div className="footer-bottom-list">
+              {footerbottomList.map((vaL, i) => (
+                <a href="#" key={i}>
+                  {vaL.text}
+                </a>
+              ))}
             </div>
           </div>
         </div>
