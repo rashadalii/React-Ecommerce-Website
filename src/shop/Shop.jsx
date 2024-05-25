@@ -6,6 +6,7 @@ import Data from "../products.json";
 import ProductCards from "./ProductCards";
 import Pagination from "./Pagination";
 import Search from "./Search";
+import ShopCategory from "./ShopCategory";
 
 const Shop = () => {
   const [GridList, setGridList] = useState(true);
@@ -26,6 +27,20 @@ const Shop = () => {
   //   function to change the current page
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
+  };
+
+  //   filter products based on category
+
+  const [selectedCategory, setselectedCategory] = useState("All");
+  const menuItems = [...new Set(Data.map((vaL) => vaL.category))];
+
+  const filterItem = (curcat) => {
+    const newItem = Data.filter((newVal) => {
+      return newVal.category === curcat;
+    });
+
+    setselectedCategory(curcat);
+    setProducts(newItem);
   };
 
   return (
@@ -71,6 +86,13 @@ const Shop = () => {
             <div className="col-lg-4 col-12">
               <aside>
                 <Search products={products} GridList={GridList} />
+                <ShopCategory
+                  filterItem={filterItem}
+                  setItem={setProducts}
+                  menuItems={menuItems}
+                  setProducts={setProducts}
+                  selectedCategory={selectedCategory}
+                />
               </aside>
             </div>
           </div>
