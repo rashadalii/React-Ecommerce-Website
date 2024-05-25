@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const desc =
   "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem est esse in optio consectetur ab quis. o harum facilis totam, obcaecati repellat!";
@@ -90,6 +91,23 @@ const ProductDisplay = ({ item }) => {
               +
             </div>
           </div>
+
+          {/* coupon field */}
+          <div className="discount-code mb-2">
+            <input
+              type="text"
+              placeholder="Enter Discount Code"
+              onChange={(e) => setcoupon(e.target.value)}
+            />
+          </div>
+
+          {/* btb section */}
+          <button type="submit" className="lab-btn">
+            <span>Add to Cart</span>
+          </button>
+          <Link to="/cart-page" className="lab-btn bg-primary">
+            <span>Check Out</span>
+          </Link>
         </form>
       </div>
     </div>
