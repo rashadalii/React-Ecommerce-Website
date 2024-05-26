@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const desc =
   "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem est esse in optio consectetur ab quis. o harum facilis totam, obcaecati repellat!";
 const ProductDisplay = ({ item }) => {
-  const { name, id, price, seller, ratingsCount, quantity } = item;
+  const { name, id, price, seller, ratingsCount, quantity, img } = item;
 
   const [prequantity, setprequantity] = useState(quantity);
-  const [coupon, setcoupon] = useState("");
+  const [coupon, setCoupon] = useState("");
   const [size, setsize] = useState("Select Size");
   const [color, setcolor] = useState("Select Color");
 
@@ -29,6 +29,41 @@ const ProductDisplay = ({ item }) => {
     setprequantity(prequantity + 1);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const product = {
+      id: id,
+      img: img,
+      name: name,
+      price: price,
+      quantity: prequantity,
+      size: size,
+      color: color,
+      coupon: coupon,
+    };
+
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingProductIndex = existingCart.findIndex(
+      (item) => item.id === id
+    );
+
+    if (existingProductIndex !== -1) {
+      existingCart[existingProductIndex].quantity += prequantity;
+    } else {
+      existingCart.push(product);
+    }
+
+    // update local storage
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+
+    // reset form fields
+    setprequantity(1);
+    setsize("Select Size");
+    setcolor("Select Color");
+    setCoupon("");
+  };
+
   return (
     <div>
       <div>
@@ -48,7 +83,7 @@ const ProductDisplay = ({ item }) => {
 
       {/* cart component */}
       <div>
-        <form>
+        <form onSubmit={handleSubmit}>
           {/* size */}
           <div className="select-product size">
             <select value={size} onChange={handleSizeChange}>
