@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const desc =
-  "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem est esse in optio consectetur ab quis. o harum facilis totam, obcaecati repellat!";
+  "Enthusiast build innovativ initiatives before lonterm high-impact awesome theme seo psd porta monetize covalent leadership after without resource.";
 const ProductDisplay = ({ item }) => {
   const { name, id, price, seller, ratingsCount, quantity, img } = item;
 
