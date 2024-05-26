@@ -126,6 +126,96 @@ const CartPage = () => {
                 </tbody>
               </table>
             </div>
+
+            {/* cart top endd */}
+            {/* cart bottom */}
+            <div className="cart-bottom">
+              {/* checkout box */}
+              <div className="cart-checkout-box">
+                <form className="coupon">
+                  <input
+                    type="text"
+                    className="cart-page-input-text"
+                    name="coupon"
+                    id="coupon"
+                    placeholder="Coupon code ...."
+                  />
+                  <input type="submit" value="Apply Coupon" />
+                </form>
+                <form className="cart-checkout">
+                  <input type="submit" value="Update Cart" />
+                  <div>CheckoutPage</div>
+                </form>
+              </div>
+              {/* ____checkout box end _____ */}
+
+              {/* shopping box */}
+              <div className="shiping-box">
+                <div className="row ">
+                  <div className="col-md-6 col-12">
+                    <div className="calculate-shiping">
+                      <h3>Calculate Shiping</h3>
+                      <div className="outline-select">
+                        <select>
+                          <option value="aze">Azerbaijan</option>
+                          <option value="tur">Turkey</option>
+                          <option value="rus">Russia</option>
+                          <option value="usa">America</option>
+                          <option value="uk">Britain</option>
+                          <option value="ukr">Ukrain</option>
+                        </select>
+                        <span className="select-icon">
+                          <i className="icofont-rounded-down"></i>
+                        </span>
+                      </div>
+
+                      <div className="outline-select shipping-select">
+                        <select>
+                          <option value="aze">Baku</option>
+                          <option value="tur">Ankara</option>
+                          <option value="rus">Moscow</option>
+                          <option value="usa">Washington</option>
+                          <option value="uk">London</option>
+                          <option value="ukr">Kiev</option>
+                        </select>
+                        <span className="select-icon">
+                          <i className="icofont-rounded-down"></i>
+                        </span>
+                      </div>
+                      <input
+                        type="text"
+                        name="postalCode"
+                        id="postalCode"
+                        placeholder="Postocode/ZIP"
+                        className="cart-page-input-text"
+                      />
+                      <button type="submit">Update Adress</button>
+                    </div>
+                  </div>
+                  <div className="col-md-6 col-12">
+                    <div className="cart-overview">
+                      <h3>Cart Totals</h3>
+                      <ul className="lab-ul">
+                        <li>
+                          <span className="pull-left">Cart Subtotal</span>
+                          <p className="pull-right">{cartSubtotal}$</p>
+                        </li>
+                        <li>
+                          <span className="pull-left">
+                            Shipping and Handling
+                          </span>
+                          <p className="pull-right">Free Shipping</p>
+                        </li>
+                        <li>
+                          <span className="pull-left">Order Total</span>
+                          <p className="pull-right">{orderTotal.toFixed(2)}$</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
