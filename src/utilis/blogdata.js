@@ -4,7 +4,7 @@ const blogList = [
         imgAlt: 'Blog Thumb',
         title: 'Business Ueporting Rouncil Them Could Plan.',
         desc: 'Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe',
-        commentCount: '3',
+        commentCount: '2',
         btnText: 'Read More',
         metaList: [
             {
@@ -42,7 +42,7 @@ const blogList = [
         imgAlt: 'Blog Thumb',
         title: 'Consulting Reporting Qounc Arei Could More.',
         desc: 'Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe',
-        commentCount: '3',
+        commentCount: '1',
         btnText: 'Read More',
         metaList: [
             {
@@ -61,7 +61,7 @@ const blogList = [
         imgAlt: 'Blog Thumb',
         title: 'Strategic Social Media and of visual design.',
         desc: 'Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe',
-        commentCount: '3',
+        commentCount: '5',
         btnText: 'Read More',
         metaList: [
             {
@@ -99,7 +99,7 @@ const blogList = [
         imgAlt: 'Blog Thumb',
         title: 'Learn by doing with Real World Projects other countries.',
         desc: 'Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe',
-        commentCount: '3',
+        commentCount: '4',
         btnText: 'Read More',
         metaList: [
             {
@@ -137,7 +137,7 @@ const blogList = [
         imgAlt: 'Blog Thumb',
         title: 'A Better Alternative To Grading Student Writing.',
         desc: 'Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe',
-        commentCount: '3',
+        commentCount: '2',
         btnText: 'Read More',
         metaList: [
             {
@@ -156,7 +156,7 @@ const blogList = [
         imgAlt: 'Blog Thumb',
         title: 'The Challenge Global Learning In Public Education.',
         desc: 'Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe',
-        commentCount: '3',
+        commentCount: '1',
         btnText: 'Read More',
         metaList: [
             {
