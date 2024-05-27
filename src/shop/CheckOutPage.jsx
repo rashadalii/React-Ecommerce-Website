@@ -1,6 +1,7 @@
 import { Button, Modal } from "react-bootstrap";
 import React, { useState } from "react";
 import "../components/modal.css";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const CheckOutPage = () => {
   const [show, setShow] = useState(false);
@@ -13,6 +14,17 @@ const CheckOutPage = () => {
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
+
+  //   direct home page
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+
+  const handleOrderConfirm = () => {
+    alert("Your Order is placed successfully!");
+    localStorage.removeItem("cart");
+    navigate(from, { replace: true });
+  };
 
   return (
     <div className="modalCard">
@@ -142,8 +154,11 @@ const CheckOutPage = () => {
                           </div>
                         </div>
                         <div className="px-5 pay">
-                          <button className="btn btn-success btn-block">
-                            Order
+                          <button
+                            className="btn btn-success btn-block"
+                            onClick={handleOrderConfirm}
+                          >
+                            Order Now
                           </button>
                         </div>
                       </div>
@@ -214,7 +229,10 @@ const CheckOutPage = () => {
                         </div>
 
                         <div className="px-5 pay">
-                          <button className="btn btn-success btn-block">
+                          <button
+                            className="btn btn-success btn-block"
+                            onClick={handleOrderConfirm}
+                          >
                             Add paypal
                           </button>
                         </div>
@@ -222,6 +240,12 @@ const CheckOutPage = () => {
                     </div>
                   </div>
                 </div>
+
+                {/* payment disclaimer*/}
+                <p className="mt-3 px-4 p-Disclaimer">
+                  <em>Payment Disclaimer: </em> In no event shall payment or
+                  partial payment by Owner for any material or service
+                </p>
               </div>
             </div>
           </div>
