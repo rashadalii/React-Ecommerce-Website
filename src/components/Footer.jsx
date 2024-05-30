@@ -9,8 +9,8 @@ const quickTitle = "Quick Links";
 const tweetTitle = "Recent Tweets";
 
 const addressList = [
-  { iconName: "icofont-google-map", text: "New York, USA." },
-  { iconName: "icofont-phone", text: "+880 123 456 789" },
+  { iconName: "icofont-google-map", text: "Baku,   AZE" },
+  { iconName: "icofont-phone", text: "+994 055 XXX XX XX" },
   { iconName: "icofont-envelope", text: "info@shopcart.com" },
 ];
 

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import PageHeader from "../components/PageHeader";
 import GoogleMap from "../components/GoogleMap";
+import emailjs from "@emailjs/browser";
 
 const subTitle = "Get in touch with us";
 const title = "We're Always Eager To Hear From You!";
@@ -14,19 +15,19 @@ const contactList = [
     imgUrl: "/src/assets/images/icon/01.png",
     imgAlt: "contact icon",
     title: "Office Address",
-    desc: "1201 park street, Fifth Avenue",
+    desc: "1201 park street, AF Business",
   },
   {
     imgUrl: "/src/assets/images/icon/02.png",
     imgAlt: "contact icon",
     title: "Phone number",
-    desc: "+22698 745 632,02 982 745",
+    desc: "+994 55 XXX XX XX",
   },
   {
     imgUrl: "/src/assets/images/icon/03.png",
     imgAlt: "contact icon",
     title: "Send email",
-    desc: "admin@shopcart.com",
+    desc: "eliyevresad901@gmail.com",
   },
   {
     imgUrl: "/src/assets/images/icon/04.png",
@@ -37,6 +38,26 @@ const contactList = [
 ];
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_8l6ekgj", "template_esh9p8j", form.current, {
+        publicKey: "1Zrq5Pzk-QQpJEkAG",
+      })
+      .then(
+        () => {
+          // console.log(result.text);
+          console.log("message sent");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+    e.target.reset();
+  };
   return (
     <div>
       <PageHeader title={"Get In Touch With US"} curPage={"Contact US"} />
@@ -82,11 +103,11 @@ const Contact = () => {
           </div>
 
           <div className="section-wrapper">
-            <form className="contact-form">
+            <form onSubmit={sendEmail} ref={form} className="contact-form ">
               <div className="form-group">
                 <input
                   type="text"
-                  name="name"
+                  name="user_name"
                   id="name"
                   placeholder="Your Name "
                 />
@@ -94,7 +115,7 @@ const Contact = () => {
               <div className="form-group">
                 <input
                   type="email"
-                  name="email"
+                  name="user_email"
                   id="email"
                   placeholder="Your Email"
                 />
@@ -110,7 +131,7 @@ const Contact = () => {
               <div className="form-group">
                 <input
                   type="text"
-                  name="subject"
+                  name="user_subject"
                   id="name"
                   placeholder="Subject "
                 />
